@@ -4,20 +4,34 @@
     box-sizing: border-box;
 }
 
+.row,
 .insideDiv {
-    padding: 20px;
-    border: 1px solid black;
+    flex:1;
 }
 
 .flexbox {
     display: flex;
 }
 
+button {
+    margin-top: 80px;
+}
+
+.container {
+    border: 5px solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 700px;
+    height: 700px;
+}
+
 body {
     display: flex;
     height: 100vh;
-    justify-content: center;
-    align-items: center;    
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
 }
 
 .bg-black {
