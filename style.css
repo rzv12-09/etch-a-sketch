@@ -5,10 +5,21 @@
 }
 
 .insideDiv {
-    padding: 13px;
-    border: 2px solid red;
+    padding: 20px;
+    border: 1px solid black;
 }
 
 .flexbox {
     display: flex;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;    
+}
+
+.bg-black {
+    background-color: black;
 }

@@ -6,6 +6,9 @@ for (let i = 0 ; i < 16 ; i++) {
     for (let j = 0 ; j < 16 ; j++) {
         const column = document.createElement("div");
         column.classList.add("insideDiv");
+        column.addEventListener("mouseenter", (e) => {
+            e.target.classList.add("bg-black")
+        })
         row.appendChild(column);
     }
     container.appendChild(row);
