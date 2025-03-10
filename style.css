@@ -4,7 +4,11 @@
     box-sizing: border-box;
 }
 
-div {
-    padding: 50px;
+.insideDiv {
+    padding: 13px;
     border: 2px solid red;
+}
+
+.flexbox {
+    display: flex;
 }
