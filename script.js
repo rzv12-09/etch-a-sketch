@@ -1,16 +1,35 @@
 const container = document.querySelector(".container");
+const sizeBtn = document.querySelector(".size-btn");
 
-for (let i = 0; i < 80; i++) {
-    const row = document.createElement("div");
-    row.classList.add("row");
-    row.classList.add("flexbox");
-    for (let j = 0; j < 80; j++) {
-        const column = document.createElement("div");
-        column.classList.add("insideDiv");
-        column.addEventListener("mouseenter", (e) => {
-            e.target.classList.add("bg-black")
-        })
-        row.appendChild(column);
+sizeBtn.addEventListener("click",() => {
+    let gridSize = prompt("Number of squares per side [1,100]");
+    if(gridSize > 100 || gridSize < 1)
+    {
+        alert("INVALID INPUT!\nPick a size between 1 and 100!");
+        return;
     }
-    container.appendChild(row);
+    clearContainer();
+    createGrid(gridSize);
+})
+
+function clearContainer(){
+    while(container.firstChild)
+        container.removeChild(container.firstChild);
+}
+
+function createGrid(gridSize){
+    for (let i = 0; i < gridSize; i++) {
+        const row = document.createElement("div");
+        row.classList.add("row");
+        row.classList.add("flexbox");
+        for (let j = 0; j < gridSize; j++) {
+            const column = document.createElement("div");
+            column.classList.add("insideDiv");
+            column.addEventListener("mouseenter", (e) => {
+                e.target.classList.add("bg-black")
+            })
+            row.appendChild(column);
+        }
+        container.appendChild(row);
+    }
 }
