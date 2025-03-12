@@ -2,11 +2,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family:sans-serif;
 }
 
 .row,
 .insideDiv {
-    flex:1;
+    flex: 1;
 }
 
 .flexbox,
@@ -22,8 +23,8 @@
 }
 
 .menu-container {
-    gap: 100px;
-    margin-left: -20vw;
+    gap: 6vw;
+    margin-left: -18vw;
 }
 
 .container {

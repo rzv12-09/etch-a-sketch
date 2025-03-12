@@ -1,6 +1,7 @@
 const container = document.querySelector(".container");
 const sizeBtn = document.querySelector(".size-btn");
 const resetBtn = document.querySelector(".reset-btn");
+const checkBoxRgb = document.querySelector("#checkbox");
 
 let buttonClicked = false;
 container.addEventListener("mousedown", () => {
@@ -20,8 +21,15 @@ function createGrid(gridSize){
             const column = document.createElement("div");
             column.classList.add("insideDiv");
             column.addEventListener("mouseenter", (e) => {
-                if(buttonClicked)
-                    e.target.classList.add("bg-black");   
+                if(buttonClicked){
+                    if(isRgbOn){
+                        e.target.style.backgroundColor = generateRandomColor();
+                    }
+                    else {
+                        e.target.style.backgroundColor = "black";
+                    }
+                   
+                }
             })
             row.appendChild(column);
         }
@@ -46,6 +54,20 @@ sizeBtn.addEventListener("click",() => {
     resetBtn.addEventListener("click", () => {
         clearContainer();
         createGrid(gridSize);
+        buttonClicked = false;
     })
-    
 })
+
+let isRgbOn = false;
+
+function changeToRgbDrawing(){
+    if(checkBoxRgb.checked == true)
+        isRgbOn = true;
+    else
+        isRgbOn = false;
+}
+
+function generateRandomColor() {
+    const randomColor = Math.round((Math.random() * 0xFFFFFF)).toString(16);
+    return "#" + randomColor;
+}
