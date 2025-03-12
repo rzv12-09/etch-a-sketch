@@ -9,12 +9,21 @@
     flex:1;
 }
 
-.flexbox {
+.flexbox,
+.menu-container {
     display: flex;
 }
 
-button {
-    margin-top: 80px;
+.options {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.menu-container {
+    gap: 100px;
+    margin-left: -20vw;
 }
 
 .container {
@@ -31,6 +40,7 @@ body {
     height: 100vh;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 50px;
 }
 

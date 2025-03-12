@@ -1,5 +1,6 @@
 const container = document.querySelector(".container");
 const sizeBtn = document.querySelector(".size-btn");
+const resetBtn = document.querySelector(".reset-btn");
 
 let buttonClicked = false;
 container.addEventListener("mousedown", () => {
@@ -42,6 +43,9 @@ sizeBtn.addEventListener("click",() => {
     }
     clearContainer();
     createGrid(gridSize);
+    resetBtn.addEventListener("click", () => {
+        clearContainer();
+        createGrid(gridSize);
+    })
+    
 })
-
-
